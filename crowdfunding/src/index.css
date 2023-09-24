@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Commissioner', sans-serif;
+}
+
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+
+.darken-image {
+  filter: brightness(55%);
+}
+
+.hidden-scroll {
+  overflow-y: hidden;
+}
