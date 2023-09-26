@@ -1,4 +1,5 @@
 import { images } from '../constants';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -20,10 +21,12 @@ const Navbar = () => {
       />
       <div className="absolute top-0 flex w-full py-8 lg:px-40 md:px-20 px-8">
         <div className="flex justify-between items-center w-full">
-          <img
-            src={images.logo}
-            alt="logo"
-          />
+          <Link to={'/'}>
+            <img
+              src={images.logo}
+              alt="logo"
+            />
+          </Link>
           <div className="flex gap-4 justify-center items-center py-4 rounded-md">
             <img
               src={images.iconSun}
