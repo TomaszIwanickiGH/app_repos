@@ -2,7 +2,7 @@ import JobCard from './JobCard';
 
 import { data } from '../constants';
 
-const JobsContainer = ({ limit = 9 }) => {
+const JobsContainer = ({ limit = 9, mode }) => {
   return (
     <div className="flex justify-between items-center gap-y-16 flex-wrap relative">
       {data.map((job) => {
@@ -18,6 +18,7 @@ const JobsContainer = ({ limit = 9 }) => {
               postedAt={job.postedAt}
               contract={job.contract}
               location={job.location}
+              mode={mode}
             />
           );
       })}

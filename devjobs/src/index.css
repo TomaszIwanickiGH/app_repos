@@ -17,6 +17,10 @@ body {
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
+.darkMode {
+  background-color: #121721;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -75,4 +79,33 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  width: 1.15em;
+  height: 1.15em;
+  border: 1px solid #9daec2;
+  border-radius: 5px;
+  display: grid;
+  place-content: center;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #5964e0;
+}
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+
+.hidden-scroll {
+  overflow-y: hidden;
 }

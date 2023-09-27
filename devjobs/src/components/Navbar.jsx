@@ -1,7 +1,14 @@
+import { useState, useEffect } from 'react';
+
 import { images } from '../constants';
 import { Link } from 'react-router-dom';
+import useTheme from '../hooks/useTheme';
 
 const Navbar = () => {
+  const theme = useTheme();
+
+  const [currentMode, setCurrentMode] = useState(theme.mode);
+
   return (
     <div className="w-full z-20">
       <img
@@ -33,7 +40,13 @@ const Navbar = () => {
               alt="icon"
             />
             <label className="switch">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                onClick={() => {
+                  setCurrentMode(currentMode === 'light' ? 'dark' : 'light');
+                  theme.toggleMode(currentMode);
+                }}
+              />
               <span className="slider round"></span>
             </label>
             <img
