@@ -1,12 +1,21 @@
+import { useState } from 'react';
+
 import CustomInput from './CustomInput';
 import Button from './Button';
 
 import { images } from '../constants';
 
 import useFilterModal from '../hooks/useFilterModal';
+import { useSearchParams } from 'react-router-dom';
 
 const SearchBar = ({ mode }) => {
   const filterModal = useFilterModal();
+
+  const [positionParam, setPositionParam] = useState('');
+  const [locationParam, setLocationParam] = useState('');
+  const [fullTimeParam, setFullTimeParam] = useState(false);
+
+  const [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <>
@@ -15,11 +24,15 @@ const SearchBar = ({ mode }) => {
         ${mode === 'light' ? 'bg-white' : 'bg-veryDarkBlue'}`}
       >
         <CustomInput
+          value={positionParam}
+          setValue={(e) => setPositionParam(e.target.value)}
           mode={mode}
           image={images.iconSearch}
           placeholder="Search by position..."
         />
         <CustomInput
+          value={locationParam}
+          setValue={(e) => setLocationParam(e.target.value)}
           mode={mode}
           image={images.iconLocation}
           border
@@ -28,6 +41,7 @@ const SearchBar = ({ mode }) => {
         <div className="flex justify-center items-center gap-4 px-6">
           <div className="flex justify-center items-center gap-2">
             <input
+              onClick={() => setFullTimeParam((prev) => !prev)}
               style={{ backgroundColor: mode === 'light' ? '#F4F6F8' : '#9DAEC2' }}
               type="checkbox"
               className={`w-[1.15rem] h-[1.15rem] `}
@@ -35,7 +49,10 @@ const SearchBar = ({ mode }) => {
             <p className={`font-bold xl:hidden flex ${mode === 'light' ? 'text-black' : 'text-white'}`}>Full Time</p>
             <p className={`font-bold xl:flex hidden ${mode === 'light' ? 'text-black' : 'text-white'}`}>Full Time Only</p>
           </div>
-          <Button label="Search" />
+          <Button
+            label="Search"
+            handleClick={() => setSearchParams({ position: positionParam, location: locationParam, fullTime: fullTimeParam })}
+          />
         </div>
       </div>
 
@@ -44,7 +61,12 @@ const SearchBar = ({ mode }) => {
         className={`lg:hidden flex justify-between items-center rounded-lg px-2
        ${mode === 'light' ? 'bg-white' : 'bg-veryDarkBlue'} `}
       >
-        <CustomInput placeholder="Search by position..." />
+        <CustomInput
+          value={positionParam}
+          setValue={(e) => setPositionParam(e.target.value)}
+          mode={mode}
+          placeholder="Search by position..."
+        />
         <div className="flex gap-4">
           <div className="flex justify-center items-center">
             <img
@@ -57,6 +79,7 @@ const SearchBar = ({ mode }) => {
             <img
               src={images.iconSearchWhite}
               alt="search"
+              onClick={() => setSearchParams({ position: positionParam })}
             />
           </div>
         </div>

@@ -12,12 +12,12 @@ const JobDetails = ({ mode }) => {
       <div className="flex flex-col gap-12 lg:w-3/5 w-full mx-auto mb-12">
         {chosenJob.map((job) => (
           <div
-            className={`flex sm:flex-row flex-col rounded-sm w-full ${mode === 'light' ? 'bg-white' : 'bg-veryDarkBlue'}`}
+            className={`relative flex sm:flex-row flex-col rounded-sm w-full ${mode === 'light' ? 'bg-white' : 'bg-veryDarkBlue'}`}
             key={job.id}
           >
             <div
               style={{ backgroundColor: job.logoBackground }}
-              className="flex justify-center items-center sm:w-[140px] sm:min-w-[140px] min-w-[40px] sm:min-h-auto min-h-[40px] px-4 sm:relative  sm:rounded-none rounded-2xl"
+              className="flex justify-center items-center sm:w-[140px] sm:min-w-[140px] min-w-[40px] sm:min-h-auto min-h-[40px] px-4 sm:relative absolute  sm:rounded-none rounded-2xl sm:left-0 sm:top-0 left-[42%] -top-4"
             >
               <img
                 className="w-full"
