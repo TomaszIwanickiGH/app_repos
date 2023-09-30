@@ -4,7 +4,7 @@ const JobCard = ({ id, logo, logoBg, company, position, postedAt, contract, loca
   return (
     <Link
       to={`/details/${id}`}
-      className={`hover:cursor-pointer rounded-md px-4 py-8 flex flex-col gap-4 lg:w-[30%] md:w-[40%] w-full relative
+      className={`hover:cursor-pointer rounded-md px-4 py-8 flex flex-col gap-4 w-full relative
       ${mode === 'light' ? 'bg-white hover:bg-neutral-50' : 'bg-veryDarkBlue hover:bg-veryDarkBlue/80'} `}
     >
       <div

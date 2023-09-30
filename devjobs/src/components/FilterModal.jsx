@@ -18,6 +18,7 @@ const FilterModal = ({ mode }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const initialPosition = searchParams.get('position');
+  const initialLocation = searchParams.get('location');
 
   if (!filterModal.isOpen) {
     return null;
@@ -40,7 +41,7 @@ const FilterModal = ({ mode }) => {
               setValue={(e) => setPositionParam(e.target.value)}
               mode={mode}
               image={images.iconSearch}
-              placeholder={initialPosition}
+              placeholder={initialPosition ? initialPosition : 'Search by position...'}
             />
           </div>
 
@@ -52,7 +53,7 @@ const FilterModal = ({ mode }) => {
               setValue={(e) => setLocationParam(e.target.value)}
               mode={mode}
               image={images.iconLocation}
-              placeholder="Filterby location..."
+              placeholder={initialLocation ? initialLocation : 'Filter by location...'}
             />
           </div>
 
@@ -70,7 +71,10 @@ const FilterModal = ({ mode }) => {
             </div>
             <Button
               label="Search"
-              handleClick={() => setSearchParams({ position: positionParam ? positionParam : initialPosition, location: locationParam, fullTime: fullTimeParam })}
+              handleClick={() => {
+                setSearchParams({ position: positionParam ? positionParam : initialPosition, location: locationParam, fullTime: fullTimeParam });
+                filterModal.onClose();
+              }}
             />
           </div>
         </div>

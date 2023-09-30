@@ -17,6 +17,10 @@ const SearchBar = ({ mode }) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
+  const filteredPosition = searchParams.get('position');
+  const filteredLocation = searchParams.get('location');
+  const fileredIsFullTime = searchParams.get('fullTime');
+
   return (
     <>
       <div
@@ -28,7 +32,7 @@ const SearchBar = ({ mode }) => {
           setValue={(e) => setPositionParam(e.target.value)}
           mode={mode}
           image={images.iconSearch}
-          placeholder="Search by position..."
+          placeholder={filteredPosition ? filteredPosition : 'Search by position...'}
         />
         <CustomInput
           value={locationParam}
@@ -36,7 +40,7 @@ const SearchBar = ({ mode }) => {
           mode={mode}
           image={images.iconLocation}
           border
-          placeholder="Filter by location..."
+          placeholder={filteredLocation ? filteredLocation : 'Filter by location...'}
         />
         <div className="flex justify-center items-center gap-4 px-6">
           <div className="flex justify-center items-center gap-2">
@@ -65,7 +69,7 @@ const SearchBar = ({ mode }) => {
           value={positionParam}
           setValue={(e) => setPositionParam(e.target.value)}
           mode={mode}
-          placeholder="Search by position..."
+          placeholder={filteredPosition ? filteredPosition : 'Search by position...'}
         />
         <div className="flex gap-4">
           <div className="flex justify-center items-center">
