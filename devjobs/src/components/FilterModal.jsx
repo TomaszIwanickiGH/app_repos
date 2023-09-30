@@ -11,9 +11,13 @@ import { useSearchParams } from 'react-router-dom';
 const FilterModal = ({ mode }) => {
   const filterModal = useFilterModal();
 
+  const [positionParam, setPositionParam] = useState('');
   const [locationParam, setLocationParam] = useState('');
   const [fullTimeParam, setFullTimeParam] = useState(false);
+
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const initialPosition = searchParams.get('position');
 
   if (!filterModal.isOpen) {
     return null;
@@ -21,7 +25,7 @@ const FilterModal = ({ mode }) => {
 
   return (
     <div className="w-full h-screen bg-neutral-800/70 z-50 flex justify-center items-center">
-      <div className="lg:px-40 md:px-20 px-8 absolute top-0 bottom-0 right-0 left-0 m-auto max-h-[250px]">
+      <div className="lg:px-40 md:px-20 px-8 absolute top-0 bottom-0 right-0 left-0 m-auto max-h-[350px]">
         <div className={`${mode === 'light' ? 'bg-white' : 'bg-veryDarkBlue'}  h-full rounded-xl flex flex-col py-6`}>
           <div className="flex justify-end px-6">
             <img
@@ -30,6 +34,18 @@ const FilterModal = ({ mode }) => {
               onClick={filterModal.onClose}
             />
           </div>
+          <div className="px-6">
+            <CustomInput
+              value={positionParam}
+              setValue={(e) => setPositionParam(e.target.value)}
+              mode={mode}
+              image={images.iconSearch}
+              placeholder={initialPosition}
+            />
+          </div>
+
+          <div className="h-[1px] bg-violet" />
+
           <div className="px-6">
             <CustomInput
               value={locationParam}
@@ -54,8 +70,7 @@ const FilterModal = ({ mode }) => {
             </div>
             <Button
               label="Search"
-              handleClick={() => console.log(searchParams)}
-              // handleClick={() => setSearchParams({ ...searchParams.entries, location: locationParam, fullTime: fullTimeParam })}
+              handleClick={() => setSearchParams({ position: positionParam ? positionParam : initialPosition, location: locationParam, fullTime: fullTimeParam })}
             />
           </div>
         </div>
