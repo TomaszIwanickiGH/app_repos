@@ -14,6 +14,7 @@
 
 body {
   overflow-y: hidden;
+  /* overflow-x: hidden; */
 }
 
 .switch {
@@ -74,4 +75,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media screen and (min-width: 1700px) {
+  .custom-media {
+    height: 100vh;
+  }
 }

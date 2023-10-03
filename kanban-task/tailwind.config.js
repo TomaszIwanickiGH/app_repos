@@ -3,6 +3,9 @@ export default {
   content: [],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    // screens: {
+    //   '3xl': '1700px',
+    // },
     extend: {
       colors: {
         mainPurple: '#635FC7',

@@ -14,7 +14,7 @@ const Sidebar = ({ mode }) => {
   return (
     <>
       <div
-        className={`${showSidebar ? 'md:flex border-r-[1px] border-r-neutral-700' : 'hidden'} hidden flex-col justify-between h-screen xl:w-[25%] lg:w-[30%] md:w-[40%] py-8
+        className={`${showSidebar ? 'lg:flex border-r-[1px] border-r-neutral-700' : 'hidden'} hidden flex-col justify-between h-screen xl:w-[25%] lg:w-[30%] md:w-[40%] py-8
         ${mode === 'light' ? 'bg-white' : 'bg-darkGray'}`}
       >
         <div className="flex flex-col gap-8 w-full">

@@ -17,7 +17,7 @@ const Nav = ({ mode }) => {
 
   return (
     <>
-      <div className={`${mode === 'light' ? 'bg-white' : 'bg-darkGray'} px-6 border-b-[1px] border-b-neutral-700 md:flex hidden justify-between items-center`}>
+      <div className={`${mode === 'light' ? 'bg-white' : 'bg-darkGray'} px-6 border-b-[1px] border-b-neutral-700 lg:flex hidden justify-between items-center`}>
         <div className="flex items-center justify-center gap-6">
           {!globals.isSidebarOpen && (
             <div className="border-r-[2px] border-r-neutral-700">
@@ -42,7 +42,7 @@ const Nav = ({ mode }) => {
       </div>
 
       {/* Mobile Nav */}
-      <div className={`${mode === 'light' ? 'bg-white' : 'bg-darkGray'} md:hidden flex justify-between items-center py-6 px-4`}>
+      <div className={`${mode === 'light' ? 'bg-white' : 'bg-darkGray'} lg:hidden flex justify-between items-center py-6 px-4`}>
         <div className="flex gap-4">
           <img
             src={images.logoMobile}

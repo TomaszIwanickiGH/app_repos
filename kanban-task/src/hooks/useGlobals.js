@@ -7,6 +7,24 @@ const useGlobals = create((set) => ({
 
   currentBoard: 'Platform Launch',
   setCurrentBoard: (boardName) => set({ currentBoard: boardName }),
+
+  chosenTask: {
+    title: '',
+    description: '',
+    status: '',
+    subtasks: [],
+    completedSubtasks: 0,
+  },
+  setChosenTask: (title, description, status, subtasks, completedSubtasks) =>
+    set({
+      chosenTask: {
+        title: title,
+        description: description,
+        status: status,
+        subtasks: subtasks,
+        completedSubtasks: completedSubtasks,
+      },
+    }),
 }));
 
 export default useGlobals;
