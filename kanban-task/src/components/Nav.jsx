@@ -4,6 +4,7 @@ import { images } from '../constants';
 
 import useGlobals from '../hooks/useGlobals';
 import useMenuModal from '../hooks/useMenuModal';
+import MenuActions from './MenuActions';
 
 const Nav = ({ mode }) => {
   const globals = useGlobals();
@@ -32,11 +33,12 @@ const Nav = ({ mode }) => {
         </div>
         <div className="flex justify-center items-center gap-4">
           <button className="px-5 py-3 bg-mainPurple font-semibold rounded-full text-white">+ Add New Task</button>
-          <img
-            onClick={() => setToggleMenu((prev) => !prev)}
-            src={images.iconVerticalEllipsis}
-            alt="menu"
-            className="hover:cursor-pointer p-2"
+          <MenuActions
+            editMesage="Edit Board"
+            deleteMessage="Delete Board"
+            toggle={toggleMenu}
+            handleToggle={() => setToggleMenu((prev) => !prev)}
+            handleClose={() => setToggleMenu(false)}
           />
         </div>
       </div>
@@ -61,31 +63,15 @@ const Nav = ({ mode }) => {
         </div>
         <div className="flex justify-center items-center gap-4">
           <button className="pt-1 pb-2 px-5 bg-mainPurple rounded-full text-white text-[18px] font-bold">+</button>
-          <img
-            onClick={() => setToggleMenu((prev) => !prev)}
-            src={images.iconVerticalEllipsis}
-            alt="menu"
-            className="hover:cursor-pointer p-2"
+          <MenuActions
+            editMesage="Edit Board"
+            deleteMessage="Delete Board"
+            toggle={toggleMenu}
+            handleToggle={() => setToggleMenu((prev) => !prev)}
+            handleClose={() => setToggleMenu(false)}
           />
         </div>
       </div>
-
-      {toggleMenu && (
-        <div className="absolute top-[75px] right-[50px] bg-veryDarkGray p-4 rounded-lg flex flex-col gap-3 w-[200px] border-[1px] border-gray">
-          <p
-            onClick={() => setToggleMenu(false)}
-            className="text-mediumGray hover:text-lightGray hover:cursor-pointer"
-          >
-            Edit Board
-          </p>
-          <p
-            onClick={() => setToggleMenu(false)}
-            className="text-red hover:text-lightRed hover:cursor-pointer"
-          >
-            Delete Board
-          </p>
-        </div>
-      )}
     </>
   );
 };

@@ -9,6 +9,8 @@ Currently, two official plugins are available:
 
 <!-- give sidebar fixed position, overflow auto (it fixed for some reason?) -->
 
-create component for subtasks
-create component for menu
 new boards, new tasks ???
+
+edit task modal,
+delete task modal,
+confirm modal

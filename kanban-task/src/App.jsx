@@ -6,6 +6,7 @@ import useTheme from './hooks/useTheme';
 
 import MenuModal from './components/modals/MenuModal';
 import TaskInfoModal from './components/modals/TaskInfoModal';
+import EditTaskModal from './components/modals/EditTaskModal';
 
 const App = () => {
   const theme = useTheme();
@@ -20,6 +21,7 @@ const App = () => {
       <div className="absolute top-0 left-0 w-full">
         <MenuModal />
         <TaskInfoModal />
+        <EditTaskModal />
       </div>
     </div>
   );
