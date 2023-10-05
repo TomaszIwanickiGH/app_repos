@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/components/modals/EditTaskModal.jsx",
+    "app/components/modals/TaskInfoModal.jsx",
+    "app/components/Home.jsx",
+    "app/components/MenuActions.jsx",
+    "app/components/Nav.jsx",
+    "app/components/modals/MenuModal.jsx",
+    "app/components/Sidebar.jsx",
+    "app/components/Subtask.jsx",
+    "app/components/Task.jsx",
+    "app/constants/images.js",
+    "app/constants/index.js",
+    "app/hooks/useEditTaskModal.js",
+    "app/hooks/useGlobals.js",
+    "app/hooks/useMenuModal.js",
+    "app/hooks/useTaskInfoModal.js",
+    "app/hooks/useTheme.js",
+    "app/components/TasksContainer.jsx"
+  ],
+  "exclude": ["node_modules"]
+}
