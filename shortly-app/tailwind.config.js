@@ -10,7 +10,16 @@ export default {
         gray: 'hsl(0, 0%, 75%)',
         grayishViolet: 'hsl(257, 7%, 63%)',
         veryDarkBlue: 'hsl(255, 11%, 22%)',
-        veryDarkViolet: 'Very Dark Violet: hsl(260, 8%, 14%)',
+        veryDarkViolet: 'hsl(260, 8%, 14%)',
+      },
+      keyframes: {
+        slideIn: {
+          '0%': { transform: 'translateX(-50%) translateY(-100%)' },
+          '100%': { transform: 'translateX(-50%) translateY(0)' },
+        },
+      },
+      animation: {
+        slideIn: 'slideIn 0.5s ease-out forwards',
       },
     },
   },

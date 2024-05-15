@@ -9,6 +9,7 @@ import iconFacebook from '../assets/icon-facebook.svg';
 import iconTwitter from '../assets/icon-twitter.svg';
 import iconInstagram from '../assets/icon-instagram.svg';
 import iconPinterest from '../assets/icon-pinterest.svg';
+import iconHamburger from '../assets/icon-hamburger.svg';
 import illustraionWorking from '../assets/illustration-working.svg';
 import logo from '../assets/logo.svg';
 
@@ -24,6 +25,7 @@ export default {
   iconTwitter,
   iconInstagram,
   iconPinterest,
+  iconHamburger,
   illustraionWorking,
   logo,
 };

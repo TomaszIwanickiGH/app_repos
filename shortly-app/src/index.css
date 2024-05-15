@@ -10,3 +10,7 @@
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
 }
+
+.paddings {
+  @apply md:py-8 py-6 lg:px-24 md:px-16 px-8;
+}
