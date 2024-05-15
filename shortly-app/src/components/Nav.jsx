@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { images, data } from '../constants';
+import Button from './Button';
 
 const Nav = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -40,7 +41,10 @@ const Nav = () => {
       />
       <div className="md:flex hidden items-center gap-8">
         <button className="px-5 py-2 rounded-full text-darkViolet hover:text-grayishViolet">Login</button>
-        <button className="px-5 py-2 rounded-full text-white bg-cyan hover:bg-cyan/70">Sign Up</button>
+        <Button
+          label="Sign Up"
+          rounded
+        />
       </div>
 
       {toggleMenu && (
@@ -58,7 +62,11 @@ const Nav = () => {
           </ul>
           <div className="flex flex-col w-full items-center gap-4">
             <button className="text-[18px] font-[600] px-5 py-2 rounded-full text-white hover:text-grayishViolet">Login</button>
-            <button className="w-full px-5 py-3 font-[600] text-[18px] rounded-full text-white bg-cyan hover:bg-cyan/70">Sign Up</button>
+            <Button
+              label="Sign Up"
+              rounded
+              classes="text-[18px] font-[600]"
+            />
           </div>
         </div>
       )}
