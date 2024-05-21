@@ -12,7 +12,7 @@ const Hero = () => {
         <Button
           label="Get Started"
           rounded
-          classes="w-[150px]"
+          classes="lg:w-[140px]"
         />
       </div>
       <img
