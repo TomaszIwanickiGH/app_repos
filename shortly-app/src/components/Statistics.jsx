@@ -24,7 +24,10 @@ const Statistics = () => {
       </div>
       <div className="relative lg:flex-row flex-col flex lg:gap-4 gap-12 mt-8 z-0">
         {data.statistics.map((stat, index) => (
-          <div className={`mt-${stat.id * 8}`}>
+          <div
+            key={index}
+            className={`mt-${stat.id * 8}`}
+          >
             <Stat
               key={index}
               {...stat}

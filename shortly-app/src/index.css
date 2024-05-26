@@ -14,3 +14,7 @@
 .paddings {
   @apply md:py-8 py-6 lg:px-24 md:px-16 px-8;
 }
+
+.paddingsX {
+  @apply lg:px-24 md:px-16 px-8;
+}

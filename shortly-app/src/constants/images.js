@@ -12,6 +12,7 @@ import iconPinterest from '../assets/icon-pinterest.svg';
 import iconHamburger from '../assets/icon-hamburger.svg';
 import illustraionWorking from '../assets/illustration-working.svg';
 import logo from '../assets/logo.svg';
+import logoLight from '../assets/logo-light.svg';
 
 export default {
   bgBoostDektop,
@@ -28,4 +29,5 @@ export default {
   iconHamburger,
   illustraionWorking,
   logo,
+  logoLight,
 };

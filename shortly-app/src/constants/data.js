@@ -51,4 +51,19 @@ const footerLinks = [
   },
 ];
 
-export default { navLinks, statistics, footerLinks };
+const socials = [
+  {
+    icon: images.iconFacebook,
+  },
+  {
+    icon: images.iconTwitter,
+  },
+  {
+    icon: images.iconPinterest,
+  },
+  {
+    icon: images.iconInstagram,
+  },
+];
+
+export default { navLinks, statistics, footerLinks, socials };
